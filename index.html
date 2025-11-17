@@ -3,197 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Projets d'Applications Utiles</title>
+    <title>Mon Portfolio Académique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: #f9f9f9;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .profile-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-info h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .profile-info .title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Education Styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
         }
 
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            border: 4px solid var(--primary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .timeline-degree {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .timeline-school {
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Skills Styles */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        /* Experience Styles */
+        .experience-item {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-role {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .experience-company {
+            color: var(--gray);
             margin-bottom: 10px;
         }
 
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.2rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #3498db;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+        /* Languages Styles */
+        .languages-container {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
         }
 
-        .project-card h3::before {
-            content: "•";
-            color: #3498db;
-            font-size: 2rem;
-            margin-right: 10px;
-        }
-
-        .problem {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 3px solid #e74c3c;
-        }
-
-        .solution {
-            background: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 3px solid #2ecc71;
-        }
-
-        .email-example {
-            background: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            margin: 8px 0;
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-
-        footer {
+        .language-item {
             text-align: center;
+            background: white;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            min-width: 150px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .language-level {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Certificates Styles */
+        .certificates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .certificate-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .certificate-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--secondary);
             color: white;
+            text-align: center;
+            padding: 30px 0;
             margin-top: 40px;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .timeline::after {
+                left: 31px;
             }
-            
-            h1 {
-                font-size: 2rem;
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::after {
+                left: 19px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 19px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Mes Projets d'Applications Utiles</h1>
-            <p class="subtitle">Solutions innovantes pour la vie quotidienne</p>
-        </header>
-
-        <div class="projects-grid">
-            <!-- Projet 1 -->
-            <div class="project-card">
-                <h3>Toilettes Maps</h3>
-                <div class="problem">
-                    <strong>Problème :</strong> En tant que voyageur ou habitant de Paris, lorsqu'on s'éloigne de chez nous, il est difficile de trouver une toilette autour de soi en cas d'urgence. C'est un problème commun pour tout le monde.
-                </div>
-                <div class="solution">
-                    <strong>Solution :</strong> Une application qui nous indique qu'il y a une/des toilette(s) autour de nous à tel endroit, ce qui serait un grand avantage pour améliorer la satisfaction de la vie.
-                </div>
-            </div>
-
-            <!-- Projet 2 -->
-            <div class="project-card">
-                <h3>Read All Lecture (Fermer les yeux)</h3>
-                <p>Application de lecture audio pour les documents, permettant d'écouter le contenu plutôt que de le lire.</p>
-            </div>
-
-            <!-- Projet 3 -->
-            <div class="project-card">
-                <h3>App Machine à Laver (Disponible ou pas)</h3>
-                <p>Application pour vérifier la disponibilité des machines à laver en temps réel dans les résidences étudiantes ou les immeubles.</p>
-            </div>
-
-            <!-- Projet 4 -->
-            <div class="project-card">
-                <h3>Tirage Aléatoire</h3>
-                <p>Outil pour organiser l'ordre des présentations, sélectionner des gagnants, ou prendre des décisions équitables de manière aléatoire.</p>
-            </div>
-
-            <!-- Projet 5 -->
-            <div class="project-card">
-                <h3>Assistance pour Ranger les Documents</h3>
-                <div class="problem">
-                    <strong>Problème :</strong> Aujourd'hui, Internet devient de plus en plus une nouvelle plateforme d'accès aux services publics. Les documents existent de moins en moins sous forme papier mais sous forme de fichiers docx, pdf... Ce qui entraîne le téléchargement d'une masse de fichiers dans son ordinateur. Souvent j'oublie de supprimer les inutiles, j'oublie de ranger certains fichiers dans le dossier qui leur appartient, ce qui occupe la place disponible de mon disque, et rend difficile de trouver le bon fichier en cas de nécessité.
-                </div>
-                <div class="solution">
-                    <strong>Solution :</strong> Une application qui permet de nous aider à classifier les fichiers par leur nom et donne des conseils pour les mettre dans tels dossiers.
-                </div>
-            </div>
-
-            <!-- Projet 6 -->
-            <div class="project-card">
-                <h3>Bloquer/Signaler les Courriels Suspects</h3>
-                <div class="problem">
-                    <strong>Problème :</strong> Recevoir des courriels suspects est normal à mesure que l'on utilise sa messagerie. Ces courriels sont souvent faciles à identifier car ils n'utilisent même pas d'adresses électroniques légitimes. Cependant, notre application de messagerie ne peut pas bloquer ces courriels, et je n'apprécie pas de voir des courriels non lus marqués en rouge dans ma boîte de réception. Mais en tant qu'étudiante, je ne souhaite pas payer d'abonnement mensuel pour bloquer ces courriels.
-                </div>
-                <div class="solution">
-                    <strong>Solution :</strong> Développer une application/un script en arrière-plan pour filtrer les courriels contenant des noms suspects.
-                </div>
-                <div style="margin-top: 15px;">
-                    <strong>Exemples d'adresses suspectes :</strong>
-                    <div class="email-example">CARREFOUR: Cᴀʀʀᴇғᴏᴜʀfrance1923213500@YxNqvIE.YxNqvIE.YxNqvIE.fr</div>
-                    <div class="email-example">iPhone: BUQiFImQ@CiibR.fr</div>
-                    <div class="email-example">Lidl-Récompenses: XkSpDidU@HtvLXEujs.us</div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-info">
+                <h1>Mon Portfolio</h1>
+                <div class="title">Étudiant en Informatique - IoT & Intelligence Artificielle</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>email@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 XX XX XX XX</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </header>
 
-        <footer>
-            <p>Projets développés pour améliorer le quotidien</p>
-        </footer>
-    </div>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Formation Académique</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - 2026</div>
+                        <div class="timeline-degree">Master 2 Informatique, Parcours IoT & AI</div>
+                        <div class="timeline-school">Université Paris-Saclay, Orsay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-degree">Master 1 Informatique, Parcours IoT & Data Science</div>
+                        <div class="timeline-school">Université Paris-Saclay, Orsay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-degree">Licence 3 Informatique</div>
+                        <div class="timeline-school">Université Paris-Saclay, Orsay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <div class="timeline-degree">Double Licence 2 Informatique-Mathématiques</div>
+                        <div class="timeline-school">Université Paris-Saclay, Orsay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2022</div>
+                        <div class="timeline-degree">Double Licence 1 Informatique-Mathématiques</div>
+                        <div class="timeline-school">Université Paris-Saclay, Orsay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2021</div>
+                        <div class="timeline-degree">Baccalauréat Général : Mathématiques, SES et HGSP</div>
+                        <div class="timeline-school">Lycée Thiers, Marseille (Mention Bien)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Compétences</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Informatique</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">NoSQL (Redis, MongoDB)</div>
+                        <div class="skill-item">Hadoop, Spark, Docker</div>
+                        <div class="skill-item">C / C++</div>
+                        <div class="skill-item">Ocaml</div>
+                        <div class="skill-item">HTML / CSS / PHP / JavaScript</div>
+                        <div class="skill-item">Processing en Java</div>
+                        <div class="skill-item">Git, GitHub, Jupyter</div>
+                        <div class="skill-item">Linux, Windows</div>
+                        <div class="skill-item">VSCode, Power BI, n8n, Postgres</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Mathématiques</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Algèbre</div>
+                        <div class="skill-item">Analyse</div>
+                        <div class="skill-item">Statistiques</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Expériences</h2>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">Mai - Juin 2025</div>
+                <div class="experience-role">Stage en IA - Développement de ChatBot</div>
+                <div class="experience-company">Entreprise B, Marseille</div>
+                <p>Développement d'un workflow d'IA et d'un chatbot. Stage de 2 mois.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2025</div>
+                <div class="experience-role">Projet Collectif IoT</div>
+                <div class="experience-company">Université Paris-Saclay</div>
+                <p>Dans le groupe d'IA, familiarisation avec Docker, prédiction des températures et des précipitations à partir des données de Météo France pour l'Université de Corse.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2017</div>
+                <div class="experience-role">Stage de Collège - Vendeuse</div>
+                <div class="experience-company">Entreprise D, Marseille</div>
+                <p>Stage d'une semaine : développement des compétences de communication et de service client.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Langues</h2>
+            </div>
+            <div class="languages-container">
+                <div class="language-item">
+                    <div class="language-name">Chinois</div>
+                    <div class="language-level">Langue maternelle</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Bilingue</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">B2 (IELTS B2)</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Espagnol</div>
+                    <div class="language-level">A2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certificates-container">
+                <div class="certificate-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Azure Fundamentals</h3>
+                    <p>Certificat Cloud</p>
+                </div>
+                <div class="certificate-item">
+                    <i class="fas fa-code"></i>
+                    <h3>n8n Level 1 & 2</h3>
+                    <p>Plateforme de workflow low-code</p>
+                </div>
+                <div class="certificate-item">
+                    <i class="fas fa-database"></i>
+                    <h3>Neo4j Fundamentals</h3>
+                    <p>Base de données orientée graphe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Mon Portfolio. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>
