@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets d'Applications Utiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-card h3::before {
+            content: "•";
+            color: #3498db;
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .problem {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .solution {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 3px solid #2ecc71;
+        }
+
+        .email-example {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 8px 0;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mes Projets d'Applications Utiles</h1>
+            <p class="subtitle">Solutions innovantes pour la vie quotidienne</p>
+        </header>
+
+        <div class="projects-grid">
+            <!-- Projet 1 -->
+            <div class="project-card">
+                <h3>Toilettes Maps</h3>
+                <div class="problem">
+                    <strong>Problème :</strong> En tant que voyageur ou habitant de Paris, lorsqu'on s'éloigne de chez nous, il est difficile de trouver une toilette autour de soi en cas d'urgence. C'est un problème commun pour tout le monde.
+                </div>
+                <div class="solution">
+                    <strong>Solution :</strong> Une application qui nous indique qu'il y a une/des toilette(s) autour de nous à tel endroit, ce qui serait un grand avantage pour améliorer la satisfaction de la vie.
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="project-card">
+                <h3>Read All Lecture (Fermer les yeux)</h3>
+                <p>Application de lecture audio pour les documents, permettant d'écouter le contenu plutôt que de le lire.</p>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="project-card">
+                <h3>App Machine à Laver (Disponible ou pas)</h3>
+                <p>Application pour vérifier la disponibilité des machines à laver en temps réel dans les résidences étudiantes ou les immeubles.</p>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="project-card">
+                <h3>Tirage Aléatoire</h3>
+                <p>Outil pour organiser l'ordre des présentations, sélectionner des gagnants, ou prendre des décisions équitables de manière aléatoire.</p>
+            </div>
+
+            <!-- Projet 5 -->
+            <div class="project-card">
+                <h3>Assistance pour Ranger les Documents</h3>
+                <div class="problem">
+                    <strong>Problème :</strong> Aujourd'hui, Internet devient de plus en plus une nouvelle plateforme d'accès aux services publics. Les documents existent de moins en moins sous forme papier mais sous forme de fichiers docx, pdf... Ce qui entraîne le téléchargement d'une masse de fichiers dans son ordinateur. Souvent j'oublie de supprimer les inutiles, j'oublie de ranger certains fichiers dans le dossier qui leur appartient, ce qui occupe la place disponible de mon disque, et rend difficile de trouver le bon fichier en cas de nécessité.
+                </div>
+                <div class="solution">
+                    <strong>Solution :</strong> Une application qui permet de nous aider à classifier les fichiers par leur nom et donne des conseils pour les mettre dans tels dossiers.
+                </div>
+            </div>
+
+            <!-- Projet 6 -->
+            <div class="project-card">
+                <h3>Bloquer/Signaler les Courriels Suspects</h3>
+                <div class="problem">
+                    <strong>Problème :</strong> Recevoir des courriels suspects est normal à mesure que l'on utilise sa messagerie. Ces courriels sont souvent faciles à identifier car ils n'utilisent même pas d'adresses électroniques légitimes. Cependant, notre application de messagerie ne peut pas bloquer ces courriels, et je n'apprécie pas de voir des courriels non lus marqués en rouge dans ma boîte de réception. Mais en tant qu'étudiante, je ne souhaite pas payer d'abonnement mensuel pour bloquer ces courriels.
+                </div>
+                <div class="solution">
+                    <strong>Solution :</strong> Développer une application/un script en arrière-plan pour filtrer les courriels contenant des noms suspects.
+                </div>
+                <div style="margin-top: 15px;">
+                    <strong>Exemples d'adresses suspectes :</strong>
+                    <div class="email-example">CARREFOUR: Cᴀʀʀᴇғᴏᴜʀfrance1923213500@YxNqvIE.YxNqvIE.YxNqvIE.fr</div>
+                    <div class="email-example">iPhone: BUQiFImQ@CiibR.fr</div>
+                    <div class="email-example">Lidl-Récompenses: XkSpDidU@HtvLXEujs.us</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Projets développés pour améliorer le quotidien</p>
+        </footer>
+    </div>
+</body>
+</html>
