@@ -8,6 +8,14 @@
     --gray: #7f8c8d;
 }
 
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
 /* 全局背景改为蓝色渐变 */
 body {
     font-family: "Segoe UI", sans-serif;
