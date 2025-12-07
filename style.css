@@ -10,14 +10,18 @@ body { font-family: "Segoe UI", sans-serif; background: #fafafa; color: #333; }
     --gray: #7f8c8d;
 }
 
-/* HEADER / HERO */
-header {
+/* HOME */
+.home-section {
     background: linear-gradient(120deg, var(--secondary), var(--primary));
-    padding: 30px 20px 80px;
-    color: white;
-    text-align: center;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 40px;
+    text-align: center;
 }
+
 
 .navbar {
     display: flex;
