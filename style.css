@@ -31,11 +31,16 @@ body {
 .view.active {
     display: block;
 }
+.view:not(.active) {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden;
+}
 
 /* HOME section 负责布局 */
 .home-section {
     min-height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -176,3 +181,14 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     color: #333;
 }
+
+/* Buttons */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.1);
+}
+
