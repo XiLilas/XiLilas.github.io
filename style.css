@@ -16,7 +16,15 @@ body {
     min-height: 100vh;
 }
 
-/* HOME section 不再负责背景，只负责布局 */
+/* 所有 view 默认隐藏，只有 active 才显示 */
+.view {
+    display: none;
+}
+.view.active {
+    display: block;
+}
+
+/* HOME section 负责布局 */
 .home-section {
     min-height: 100vh;
     display: flex;
@@ -32,7 +40,7 @@ body {
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin: 20px 0 40px;
 }
 
 .nav-btn {
@@ -67,13 +75,96 @@ body {
     padding: 60px 0;
 }
 
-/* KEEP CARDS WHITE FOR READABILITY */
-.timeline-content,
-.skill-category,
-.language-item,
-.certificate-item,
-.experience-item {
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title h2 {
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+/* TIMELINE */
+.timeline {
+    margin-top: 20px;
+    border-left: 3px solid var(--primary);
+    padding-left: 25px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-content {
     background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     color: #333;
 }
 
+.timeline-date { color: var(--primary); font-weight: bold; }
+
+/* SKILLS CARDS */
+.skills-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.skill-category {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    color: #333;
+}
+
+/* LANGUAGES */
+.languages-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.language-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 140px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    color: #333;
+}
+
+/* CERTIFICATES */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.certificate-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    color: #333;
+}
+
+/* WORK */
+.experience-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #333;
+}
