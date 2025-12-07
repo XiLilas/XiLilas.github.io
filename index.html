@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xi WANG</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- 可选独立 CSS -->
 </head>
 <body>
-    <!-- Header / Home -->
-    <header id="home">
-        <div class="container header-inner">
-            <nav class="nav" aria-label="Main Navigation">
-                <a href="#home">Home</a>
-                <a href="#work">Work</a>
-                <a href="#about">About me</a>
-                <a href="#contact">Contact me</a>
-            </nav>
 
-            <div class="profile-info">
-                <h1>Xi Wang</h1>
-                <div class="title">Étudiante en Master — IoT & Intelligence Artificielle</div>
-                <!-- 简短自我介绍（Home 部分） -->
-                <p class="lead">Bonjour, je suis Xi. Étudiante à l'Université Paris-Saclay, passionnée par l'IoT, le machine learning et l'analyse de données. </p>
+<header>
+    <nav>
+        <button class="nav-btn" data-route="home">Home</button>
+        <button class="nav-btn" data-route="about">About me</button>
+        <button class="nav-btn" data-route="work">Work</button>
+        <button class="nav-btn" data-route="contact">Contact me</button>
+    </nav>
+</header>
 
-                <div class="contact-info">
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Paris / Marseille, France</span></div>
-                    <div class="contact-item"><i class="fas fa-envelope"></i><span>lilaswang2227@gmail.com</span></div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title"><h2>About me</h2></div>
-            <div class="about-box">
-                <p>Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay. </p>
-            </div>
-        </div>
+<main>
+    <section id="view-home">
+        <h1>Portfolio de Xi</h1>
+        <p>Bienvenue sur mon portfolio. Je suis diplômée d’une Licence en Informatique à l’Université Paris-Saclay. </p>
+        <p>Je vais prochainement obtenir mon diplome de Master en Informatique Parcours IoT à l’Université Paris-Saclay. </p>
+        <p>Autonome et rigoureuse, je suis toujours prête à relever de nouveaux défis !</p>
     </section>
 
-    <!-- Education Section -->
+    <section id="view-about" hidden>
+        <h2>Localisation : Paris / Marseille, France</h2>
+        <p>Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay.</p>
+            <!-- Education Section -->
+        
     <section id="education">
         <div class="container">
             <div class="section-title"><h2>Formation Académique</h2></div>
@@ -85,15 +68,6 @@
         </div>
     </section>
 
-    <!-- Work (Experience) Section -->
-    <section id="work">
-        <div class="container">
-            <div class="section-title"><h2>Work / Expériences</h2></div>
-            <div class="experience-item"><div class="experience-date">Mai - Juin 2025</div><div class="experience-role">Stage IA - ChatBot</div><div class="experience-company">BusinessTech</div><p>Workflow IA et chatbot.</p></div>
-            <div class="experience-item"><div class="experience-date">2025</div><div class="experience-role">Projet Collectif IoT</div><div class="experience-company">Université Paris-Saclay</div><p>Prédiction météo et pipeline de données.</p></div>
-        </div>
-    </section>
-
     <!-- Languages Section -->
     <section id="languages">
         <div class="container">
@@ -117,55 +91,25 @@
             </div>
         </div>
     </section>
+        
+    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title"><h2>Contact me</h2></div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Me contacter</h3>
-                    <p><strong>Email :</strong> lilaswang2227@gmail.com</p>
-                    <p><strong>Localisation :</strong> Paris / Marseille</p>
-                </div>
-                <div class="contact-card">
-                    <h3>Envoyer un message</h3>
-                    <form onsubmit="alert('Form demo — implémentez backend pour envoyer.'); return false;">
-                        <input type="text" name="name" placeholder="Votre nom" required />
-                        <input type="email" name="email" placeholder="Votre email" required />
-                        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-                        <button class="btn" type="submit">Envoyer</button>
-                    </form>
-                </div>
-            </div>
+
+    
+    <section id="view-work" hidden>
+        <h2>Work / Expériences</h2>
+        <div>
+            <strong>Mai - Juin 2025 :</strong> Stage IA - ChatBot, BusinessTech
+        </div>
+        <div>
+            <strong>2025 :</strong> Projet Collectif IoT, Université Paris-Saclay
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container"><p>&copy; 2025 Xi Wang. Tous droits réservés.</p></div>
-    </footer>
-
-    <script>
-        // 保持你的 scroll 动画效果和 timeline 动画
-        document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            timelineItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(item);
-            });
-        });
-    </script>
-</body>
-</html>
+    <section id="view-contact" hidden>
+        <h2>Intéressé(e) par une collaboration ou envie d’en savoir plus sur mon travail ? N’hésitez 
+            pas à me contacter via les coordonnées ci-dessous. Je serai ravie d’échanger avec vous !</h2>
+        <p>Email : lilaswang2227@gmail.com</p>
+    </section>
+</main>
 
