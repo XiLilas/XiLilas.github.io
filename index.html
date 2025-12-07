@@ -4,47 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xi WANG</title>
-    <link rel="stylesheet" href="style.css"> <!-- 可选独立 CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <nav>
+    <nav class="navbar">
         <button class="nav-btn" data-route="home">Home</button>
         <button class="nav-btn" data-route="about">About me</button>
         <button class="nav-btn" data-route="work">Work</button>
         <button class="nav-btn" data-route="contact">Contact me</button>
     </nav>
+
+    <div class="hero">
+        <h1>Portfolio de Xi</h1>
+        <p>Bienvenue sur mon portfolio. Je suis diplômée d’une Licence en Informatique à l’Université Paris-Saclay.</p>
+        <p>Je vais prochainement obtenir mon diplome de Master en Informatique Parcours IoT à l’Université Paris-Saclay.</p>
+        <p>Autonome et rigoureuse, je suis toujours prête à relever de nouveaux défis !</p>
+    </div>
 </header>
 
 <main>
-    <section id="view-home">
-        <h1>Portfolio de Xi</h1>
-        <p>Bienvenue sur mon portfolio. Je suis diplômée d’une Licence en Informatique à l’Université Paris-Saclay. </p>
-        <p>Je vais prochainement obtenir mon diplome de Master en Informatique Parcours IoT à l’Université Paris-Saclay. </p>
-        <p>Autonome et rigoureuse, je suis toujours prête à relever de nouveaux défis !</p>
-    </section>
 
-    <section id="view-about" hidden>
-        <h2>Localisation : Paris / Marseille, France</h2>
-        <p>Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay.</p>
-            <!-- Education Section -->
-        
-    <section id="education">
+    <!-- HOME VIEW -->
+    <section id="view-home"></section>
+
+    <!-- ABOUT -->
+    <section id="view-about" class="page-section" hidden>
         <div class="container">
+            <h2>Localisation : Paris / Marseille, France</h2>
+            <p>Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay.</p>
+
+            <!-- Formation -->
             <div class="section-title"><h2>Formation Académique</h2></div>
             <div class="timeline">
-                <!-- timeline items -->
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-date">2025 - 2026</div><div class="timeline-degree">Master 2 Informatique, IoT & AI</div><div class="timeline-school">Université Paris-Saclay</div></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-date">2024 - 2025</div><div class="timeline-degree">Master 1 Informatique, IoT & Data Science</div><div class="timeline-school">Université Paris-Saclay</div></div></div>
-                <div class="timeline-item"><div class="timeline-content"><div class="timeline-date">2023 - 2024</div><div class="timeline-degree">Licence 3 Informatique</div><div class="timeline-school">Université Paris-Saclay</div></div></div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - 2026</div>
+                        <div class="timeline-degree">Master 2 Informatique, IoT & AI</div>
+                        <div class="timeline-school">Université Paris-Saclay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-degree">Master 1 Informatique, IoT & Data Science</div>
+                        <div class="timeline-school">Université Paris-Saclay</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-degree">Licence 3 Informatique</div>
+                        <div class="timeline-school">Université Paris-Saclay</div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
+            <!-- Skills -->
             <div class="section-title"><h2>Compétences</h2></div>
             <div class="skills-container">
                 <div class="skill-category">
@@ -65,51 +82,61 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Languages Section -->
-    <section id="languages">
-        <div class="container">
+            <!-- Languages -->
             <div class="section-title"><h2>Langues</h2></div>
             <div class="languages-container">
-                <div class="language-item"><div class="language-name">Chinois</div><div class="language-level">Langue maternelle</div></div>
-                <div class="language-item"><div class="language-name">Français</div><div class="language-level">Bilingue</div></div>
-                <div class="language-item"><div class="language-name">Anglais</div><div class="language-level">B2</div></div>
+                <div class="language-item">
+                    <div class="language-name">Chinois</div>
+                    <div class="language-level">Langue maternelle</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Bilingue</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">B2</div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
-        <div class="container">
+            <!-- Certificates -->
             <div class="section-title"><h2>Certifications</h2></div>
             <div class="certificates-container">
-                <div class="certificate-item"><i class="fas fa-cloud"></i><h3>Azure Fundamentals</h3></div>
-                <div class="certificate-item"><i class="fas fa-code"></i><h3>n8n Level 1 & 2</h3></div>
-                <div class="certificate-item"><i class="fas fa-database"></i><h3>Neo4j Fundamentals</h3></div>
+                <div class="certificate-item"><h3>Azure Fundamentals</h3></div>
+                <div class="certificate-item"><h3>n8n Level 1 & 2</h3></div>
+                <div class="certificate-item"><h3>Neo4j Fundamentals</h3></div>
             </div>
         </div>
     </section>
-        
-    </section>
 
-
-    
-    <section id="view-work" hidden>
-        <h2>Work / Expériences</h2>
-        <div>
-            <strong>Mai - Juin 2025 :</strong> Stage IA - ChatBot, BusinessTech
+    <!-- WORK -->
+    <section id="view-work" class="page-section" hidden>
+        <div class="container">
+            <h2>Work / Expériences</h2>
+            <div class="experience-item">
+                <strong>Mai - Juin 2025 :</strong> Stage IA - ChatBot, BusinessTech
+            </div>
+            <div class="experience-item">
+                <strong>2025 :</strong> Projet Collectif IoT, Université Paris-Saclay
+            </div>
         </div>
-        <div>
-            <strong>2025 :</strong> Projet Collectif IoT, Université Paris-Saclay
+    </section>
+
+    <!-- CONTACT -->
+    <section id="view-contact" class="page-section" hidden>
+        <div class="container">
+            <h2>Intéressé(e) par une collaboration ou envie d’en savoir plus sur mon travail ?  
+                N’hésitez pas à me contacter via les coordonnées ci-dessous.  
+                Je serai ravie d’échanger avec vous !
+            </h2>
+            <p>Email : lilaswang2227@gmail.com</p>
         </div>
     </section>
 
-    <section id="view-contact" hidden>
-        <h2>Intéressé(e) par une collaboration ou envie d’en savoir plus sur mon travail ? N’hésitez 
-            pas à me contacter via les coordonnées ci-dessous. Je serai ravie d’échanger avec vous !</h2>
-        <p>Email : lilaswang2227@gmail.com</p>
-    </section>
 </main>
+
+<script src="script.js"></script>
+</body>
+</html>
 
