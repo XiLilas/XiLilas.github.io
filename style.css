@@ -13,7 +13,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
-    padding-bottom: 100px;
 }
 
 
@@ -23,6 +22,7 @@ body {
     background: linear-gradient(120deg, var(--secondary), var(--primary));
     color: white;
     min-height: 100vh;
+    padding-bottom: 100px;
 }
 
 /* 所有 view 默认隐藏，只有 active 才显示 */
