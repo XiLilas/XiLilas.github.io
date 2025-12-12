@@ -17,7 +17,7 @@ links.forEach(link => {
     links.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
 
-    // 可选：切换后回到顶部（更像她）
+    // 可选：切换后回到顶部
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
