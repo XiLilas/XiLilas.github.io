@@ -21,3 +21,105 @@ links.forEach(link => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+
+/* ====== DATA : 项目分类 ====== */
+const projects = {
+  "Datascience and IA": [
+    {
+      title: "Picture and Signal Processing",
+      desc: "Projet Python – traitement d’images et signaux (2025)",
+      image: "",
+      link: ""
+    },
+    {
+      title: "Stellar Classification",
+      desc: "Hands-on ML avec Scikit-learn (2024)",
+      image: "",
+      link: "https://github.com/XiLilas/Stellar"
+    }
+  ],
+
+  "Web Development": [
+    {
+      title: "WeShare",
+      desc: "WeShare aide les groupes (colocations, équipes ou familles) à organiser et répartir leurs tâches sans confusion. L’objectif du site est d’attribuer automatiquement ou manuellement les responsabilités et de suivre en temps réel l’avancement de chacun pour éviter les retards, les malentendus et les déséquilibres en offrant une vision partagée et transparente des tâches à accomplir. Les utilisateurs peuvent ajuster ou échanger leurs tâches facilement, tout en conservant une répartition équitable. WeShare apporte une organisation simple, intelligente et collaborative pour que chaque groupe fonctionne harmonieusement.",
+      image: "",
+      link: "https://github.com/YannickD78/WeShare"
+    },
+    {
+      title: "Site de vote",
+      desc: "Projet Web – HTML / CSS / JS / PHP (2024)",
+      image: "",
+      link: "https://github.com/XiLilas/WebVote"
+    }
+  ],
+
+  "UI/UX Design": [
+    {
+      title: "BioFolia – Arbre de vie",
+      desc: "Projet JavaFX – UI/UX (2024)",
+      image: "",
+      link: "https://github.com/XiLilas/BioFolia"
+    }
+  ],
+
+  "Video Games": [
+    {
+      title: "Rancher",
+      desc: "Jeu Java (2024)",
+      image: "",
+      link: "https://github.com/XiLilas/Rancher"
+    }
+  ],
+
+  "Algorithm and System": [
+    {
+      title: "Prédateur / Proie & 2048",
+      desc: "Projet C++ (2021–2022)",
+      image: "",
+      link: ""
+    }
+  ]
+};
+
+/* ====== LOGIQUE ====== */
+const listItems = document.querySelectorAll(".list-item");
+const projectDetail = document.getElementById("project-detail");
+const backBtn = document.getElementById("back-btn");
+
+listItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const category = item.innerText.trim();
+    const data = projects[category];
+    if (!data) return;
+
+    // cacher la liste
+    document.querySelector(".list-container").style.display = "none";
+    document.getElementById("work_exp").style.display = "none";
+
+    // reset détails
+    projectDetail.innerHTML = `<button id="back-btn">← Return</button>`;
+
+    // générer projets
+    data.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "project-item";
+      div.innerHTML = `
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
+      `;
+      projectDetail.appendChild(div);
+    });
+
+    projectDetail.style.display = "block";
+
+    // rebind return
+    document.getElementById("back-btn").onclick = () => {
+      document.getElementById("work_exp").style.display = "block";
+      projectDetail.style.display = "none";
+      document.querySelector(".list-container").style.display = "flex";
+    };
+  });
+});
