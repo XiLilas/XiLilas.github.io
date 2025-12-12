@@ -5,39 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Xi</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<footer>
-    <nav class="navbar">
-        <button class="nav-btn" data-route="home">Home</button>
-        <button class="nav-btn" data-route="about">About me</button>
-        <button class="nav-btn" data-route="work">Work</button>
-        <button class="nav-btn" data-route="contact">Contact me</button>
-    </nav>
-</footer>
-
-<main>
-
     <!-- HOME -->
-    <!-- 注意：加了 class="view"；默认 active -->
-    <section id="view-home" class="view home-section active">
-        <div class="hero">
-            <h1>Portfolio de Xi</h1>
-            <p>Bienvenue sur mon portfolio. Je suis diplômée d’une Licence en Informatique à l’Université Paris-Saclay.</p>
-            <p>Je vais prochainement obtenir mon diplome de Master en Informatique Parcours IoT à l’Université Paris-Saclay.</p>
-            <p>Autonome et rigoureuse, je suis toujours prête à relever de nouveaux défis !</p>
-        </div>
-    </section>
+    <div id="home-section" class="section active">
+        <h1 id="title">Portfolio de Xi</h1>
+        <p class="intro" id="intro">
+            Bienvenue sur mon portfolio. Je suis diplômée d’une Licence en Informatique à l’Université Paris-Saclay.
+            Je vais prochainement obtenir mon diplome de Master en Informatique Parcours IoT à l’Université Paris-Saclay.
+            Autonome et rigoureuse, je suis toujours prête à relever de nouveaux défis !
+        </p>
+        <div class="separator"></div>
+    </div>
+
 
     <!-- ABOUT -->
-    <section id="view-about" class="view page-section">
+    <div id="about-section" class="section">
+        <h1 id="titleabout">ABOUT ME</h1>
         <div class="container">
             <h2>Localisation : Paris / Marseille, France</h2>
-            <p>Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay.</p>
+            <p class="intro" id="intro">Je suis Xi, en Master IoT & IA à l'Université Paris-Saclay.</p>
 
             <!-- Formation -->
-            <div class="section-title"><h2>Formation Académique</h2></div>
+            <h2>Formation Académique</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -62,8 +56,9 @@
                 </div>
             </div>
 
+
             <!-- Skills -->
-            <div class="section-title"><h2>Compétences</h2></div>
+            <h2>Compétences</h2>
             <div class="skills-container">
                 <div class="skill-category">
                     <h3>Informatique</h3>
@@ -85,7 +80,7 @@
             </div>
 
             <!-- Languages -->
-            <div class="section-title"><h2>Langues</h2></div>
+            <h2>Langues</h2>
             <div class="languages-container">
                 <div class="language-item">
                     <div class="language-name">Chinois</div>
@@ -101,41 +96,93 @@
                 </div>
             </div>
 
-            <!-- Certificates -->
-            <div class="section-title"><h2>Certifications</h2></div>
+            <!-- Certifications -->
+            <h2>Certifications</h2>
             <div class="certificates-container">
                 <div class="certificate-item"><h3>Azure Fundamentals</h3></div>
                 <div class="certificate-item"><h3>n8n Level 1 & 2</h3></div>
                 <div class="certificate-item"><h3>Neo4j Fundamentals</h3></div>
             </div>
         </div>
-    </section>
+
+        <div class="separator"></div>
+    </div>
+
 
     <!-- WORK -->
-    <section id="view-work" class="view page-section">
+    <div id="work-section" class="section">
+        <h1>Work / Expériences</h1>
         <div class="container">
-            <h2>Work / Expériences</h2>
-            <div class="experience-item">
-                <strong>Mai - Juin 2025 :</strong> Stage IA - ChatBot, BusinessTech
+            <div class="experience-card">
+                <p>
+                    <strong>Stage IA – BusinessTech</strong><br>
+                    Marseille, France. Mai - Juin 2025<br><br>
+
+                    Workflows & AI Automations & Chatbot.<br>
+                    Optimisation de la gestion des données produits et clients afin de
+                    fournir des réponses plus pertinentes et mettre à jour efficacement
+                    la base de données.<br><br>
+
+                    Utilisation de n8n pour la création de workflows et l’interrogation
+                    d’une base PostgreSQL contenant l’historique des tickets, les FAQ
+                    et les pages produits.<br><br>
+
+                    Mise en place de RAG et de la vectorisation de documents pour des
+                    réponses plus précises et contextuelles.<br><br>
+
+                    Développement d’un système de traduction automatique bidirectionnelle
+                    permettant au chatbot de répondre dans la langue maternelle
+                    de l’utilisateur.
+                </p>
             </div>
-            <div class="experience-item">
-                <strong>2025 :</strong> Projet Collectif IoT, Université Paris-Saclay
+
+            <div class="experience-card">
+                <p>
+                    <strong>IoT TER – Université de Corse Pasquale Paoli</strong><br>
+                    Paris et périphérie, France. Janv – Mai 2025<br><br>
+
+                    Conception de l’architecture de solutions IoT pour la collecte,
+                    le traitement et la visualisation de données météorologiques
+                    en temps réel.<br><br>
+
+                    Rôle de chef du groupe IA et développeur Python :
+                    mise en place de différentes méthodes d’estimation
+                    des températures et précipitations hebdomadaires.<br><br>
+
+                    Utilisation de conteneurs Docker pour la collecte
+                    de données via l’API Météo France et l’estimation en temps réel.
+                </p>
             </div>
         </div>
-    </section>
+
+        <div class="separator"></div>
+    </div>
+
 
     <!-- CONTACT -->
-    <section id="view-contact" class="view page-section">
-        <div class="container">
-            <h2>Intéressé(e) par une collaboration ou envie d’en savoir plus sur mon travail ?  
-                N’hésitez pas à me contacter via les coordonnées ci-dessous.  
-                Je serai ravie d’échanger avec vous !
-            </h2>
-            <p>Email : lilaswang2227@gmail.com</p>
+    <div id="contact-section" class="section">
+        <h1 id="titlecontact">CONTACT</h1>
+        <p class="intro" id="introcontact">
+            Intéressé(e) par une collaboration ou envie d’en savoir plus sur mon travail?  
+            N’hésitez pas à me contacter via les coordonnées ci-dessous.  
+            Je serai ravie d’échanger avec vous !
+        </p>
+        <div class="icones">
+            <a href="mailto:lilaswang2227@gmail.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
         </div>
-    </section>
+        <div class="separator"></div>
 
-</main>
+    </div>
+
+  <!-- Menu -->
+  <nav>
+    <a id="home" href="#">HOME</a>
+    <a id="work" href="#">WORK</a>
+    <a id="about" href="#">ABOUT ME</a>
+    <a id="contact" href="#">CONTACT</a>
+  </nav>
 
 <script src="script.js"></script>
 </body>
