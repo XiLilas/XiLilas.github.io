@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(120deg, #2c3e50, #3a7bd5);
+    background: linear-gradient(90deg,#5660a2 0%, #4b5396 6%, #41498b 20%, #383f7f 34%, #383f7f 66%, #41498b 80%, #4b5396 94%, #5660a2 100%);
     color: white;
     text-align: center;
 }
@@ -17,11 +17,16 @@ body {
     display: none;
     opacity: 0;
     transition: opacity 0.6s ease;
+    min-height: 70vh;  /* Ensure sections take full viewport height */
 }
 
 .section.active {
     display: block;
     opacity: 1;
+}
+
+html {
+    font-size: 18px; /* Base font size */
 }
 
 h1 {
@@ -67,6 +72,19 @@ h1 {
     letter-spacing: 1px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.9);
+}
+
+.home-avatar {
+    width: 180px;           /* 大小刚好 */
+    height: 180px;
+    border-radius: 50%;     /* 圆形头像 */
+    object-fit: cover;
+
+    margin: 30px auto 30px; /* 和标题、文字的间距 */
+    display: block;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    border: 3px solid rgba(255,255,255,0.6);
 }
 
 
@@ -179,6 +197,7 @@ h1 {
     font-size: 48px;          /* taille de l’icône */
     margin: 20px;
     cursor: pointer;
+    color: white; 
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -270,6 +289,8 @@ h1 {
 /* NAV */
 nav {
     margin: 20px 0 40px;
+    position: relative;
+    padding-top : 30px;
 }
 
 nav a {
@@ -283,6 +304,18 @@ nav a {
     font-weight: bold;
     letter-spacing: 2px;
     transition: 0.3s;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;               /* 在 nav 顶部 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;         /* 横线长度（可调） */
+    height: 2px;
+    background: white;
+    opacity: 0.85;
 }
 
 nav a:hover {

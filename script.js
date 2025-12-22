@@ -34,9 +34,21 @@ const projects = {
     },
     {
       title: "Stellar Classification",
-      desc: "Hands-on ML avec Scikit-learn (2024)",
+      desc: "Hands-on ML 2024 avec Scikit-learn, numpy, pandas, seaborn, imblearn et matplotlib",
       image: "",
       link: "https://github.com/XiLilas/Stellar"
+    },
+    {
+      title: "DataCamp2024",
+      desc: "Classification of variable stars from light curves using sklearn, numpy et pandas",
+      image: "",
+      link: "https://github.com/XiLilas/DataCamp2024"
+    },
+    {
+      title : "TER IoT - Weather",
+      desc : "Conception de l'architecture de solutions IoT pour la collecte, le traitement et la visualisation de données météorologiques en temps réel. En tant que le chef du groupe IA et le développeur python, mise en place différents méthode pour estimer les températures et les précipitations de la semaine qui suit. Utilisation de conteneurs Docker pour collecter les données en temps réel via API de Météo France, et assurer l'estimation en temps réel. Technologies IA Python : LSTM, XGBoost, SMOTE.",
+      image : "imgs/TER.jpg",
+      link : "https://github.com/XiLilas/weather"
     }
   ],
 
@@ -44,7 +56,7 @@ const projects = {
     {
       title: "WeShare",
       desc: "WeShare aide les groupes (colocations, équipes ou familles) à organiser et répartir leurs tâches sans confusion. L’objectif du site est d’attribuer automatiquement ou manuellement les responsabilités et de suivre en temps réel l’avancement de chacun pour éviter les retards, les malentendus et les déséquilibres en offrant une vision partagée et transparente des tâches à accomplir. Les utilisateurs peuvent ajuster ou échanger leurs tâches facilement, tout en conservant une répartition équitable. WeShare apporte une organisation simple, intelligente et collaborative pour que chaque groupe fonctionne harmonieusement.",
-      image: "",
+      image: "imgs/WeShare.jpg",
       link: "https://github.com/YannickD78/WeShare"
     },
     {
@@ -106,6 +118,7 @@ listItems.forEach(item => {
       const div = document.createElement("div");
       div.className = "project-item";
       div.innerHTML = `
+        ${p.image ? `<img src="${p.image}" alt="${p.title}" class="project-image">` : ""}
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
         ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
