@@ -243,6 +243,7 @@ h1 {
 .project-item {
   display: flex;
   gap: 30px;
+  align-items: flex-start;
   background: white;
   color: #333;
   border-radius: 16px;
@@ -271,6 +272,21 @@ h1 {
   margin-top: 10px;
   font-weight: bold;
   color: #3a7bd5;
+}
+
+.project-image {
+  cursor: zoom-in;
+  flex: 0 0 30%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.project-item h3,
+.project-item p,
+.project-item a {
+  flex: 1;
 }
 
 /* Return */
@@ -321,4 +337,25 @@ nav::before {
 nav a:hover {
     background: white;
     color: #3a7bd5;
+}
+
+
+/* ===== 图片放大弹窗 ===== */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal img {
+  width: 80vw;
+  height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  cursor: zoom-out;
 }

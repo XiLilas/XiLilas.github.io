@@ -62,7 +62,7 @@ const projects = {
     {
       title: "Site de vote",
       desc: "Projet Web – HTML / CSS / JS / PHP (2024)",
-      image: "",
+      image: "imgs/scrutin1.jpg",
       link: "https://github.com/XiLilas/WebVote"
     }
   ],
@@ -71,7 +71,7 @@ const projects = {
     {
       title: "BioFolia – Arbre de vie",
       desc: "Projet JavaFX – UI/UX (2024)",
-      image: "",
+      image: "imgs/BioFolia.jpg",
       link: "https://github.com/XiLilas/BioFolia"
     }
   ],
@@ -80,7 +80,7 @@ const projects = {
     {
       title: "Rancher",
       desc: "Jeu Java (2024)",
-      image: "",
+      image: "imgs/rancher.jpg",
       link: "https://github.com/XiLilas/Rancher"
     }
   ],
@@ -89,7 +89,7 @@ const projects = {
     {
       title: "Prédateur / Proie & 2048",
       desc: "Projet C++ (2021–2022)",
-      image: "",
+      image: "imgs/gifLR.gif",
       link: ""
     }
   ]
@@ -124,6 +124,29 @@ listItems.forEach(item => {
         ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
       `;
       projectDetail.appendChild(div);
+    });
+
+    /* ===== 图片点击放大 ===== */
+    let modal = document.querySelector(".image-modal");
+
+    if (!modal) {
+      modal = document.createElement("div");
+      modal.className = "image-modal";
+      modal.innerHTML = `<img src="">`;
+      document.body.appendChild(modal);
+    }
+
+    const modalImg = modal.querySelector("img");
+
+    document.querySelectorAll(".project-image").forEach(img => {
+      img.addEventListener("click", () => {
+        modalImg.src = img.src;
+        modal.style.display = "flex";
+      });
+    });
+
+    modal.addEventListener("click", () => {
+      modal.style.display = "none";
     });
 
     projectDetail.style.display = "block";
