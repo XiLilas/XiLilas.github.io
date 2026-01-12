@@ -79,7 +79,14 @@ const projects = {
   "Video Games": [
     {
       title: "Rancher",
-      desc: "Jeu Java (2024)",
+      desc: "Jeu Java (2024) Le projet que nous voulons réaliser s’appelle «rancher», inspiré par les jeux de stratégie en temps réel.
+Dans ce jeu vidéo, il dispose quatre types d’objets, un propriétaire de ranch, un proie mouton, un prédateur loup et un magasin.
+Le joueur peut contrôler le propriétaire de ranch dans le ranch directement par le clavier de se déplacer, faire peur au loup ou de faire d'autres actions.
+Les moutons produisent de la laine dans le temps, le taux de production dépend s'ils ont bien mangé ou s'il y a des moutons morts en raison du loup. Touche E pour ramasser la laine.
+Le loup est un unité non contrôlée par le joueur qui se déplace sur la carte, chassant les moutons dans le ranch.
+Le magasin résume la richesse du rancher, et permet au joueur d'acheter des moutons et des herbes.
+Le but du jeu est de nourrir plus d’un certain somme des moutons lors d’atteindre un délai du temps (compter par le temps du monde du jeu) sinon le joueur a perdu le jeu.
+",
       image: "imgs/rancher.jpg",
       link: "https://github.com/XiLilas/Rancher"
     }
