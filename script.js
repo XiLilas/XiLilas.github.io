@@ -28,8 +28,8 @@ const projects = {
   "Data Science and IA": [
     {
       title: "Bird-s-Trace-Tracking",
-      desc: "Projet cv2 – Computer Vision (2026)",
-      image: "",
+      desc: "Projet openCV & Python – Computer Vision (2026)",
+      image: "imgs/TrackingBirds.png",
       link: "https://github.com/XiLilas/Bird-s-Trace-Tracking"
     },
     {
