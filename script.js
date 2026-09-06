@@ -25,12 +25,18 @@ links.forEach(link => {
 
 /* ====== DATA : 项目分类 ====== */
 const projects = {
-  "Datascience and IA": [
+  "Data Science and IA": [
+    {
+      title: "Bird-s-Trace-Tracking",
+      desc: "Projet cv2 – Computer Vision (2026)",
+      image: "",
+      link: "https://github.com/XiLilas/Bird-s-Trace-Tracking"
+    },
     {
       title: "Picture and Signal Processing",
       desc: "Projet Python – traitement d’images et signaux (2025)",
       image: "",
-      link: ""
+      link: "https://github.com/XiLilas/Signal_Processing"
     },
     {
       title: "Stellar Classification",
