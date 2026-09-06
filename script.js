@@ -28,7 +28,8 @@ const projects = {
   "Data Science and IA": [
     {
       title: "Bird-s-Trace-Tracking",
-      desc: "Projet openCV & Python – Computer Vision (2026)",
+      desc: "Projet openCV & Python – Computer Vision (2026). Ces travaux revisitent les approches classiques de vision par ordinateur pour le suivi d'objets multiples dans le contexte de la détection et du suivi d'oiseaux ; pour ce faire, une chaîne de traitement (« pipeline ») basée sur OpenCV est conçue et évaluée systématiquement en comparaison avec NetTrack, un système de suivi par apprentissage profond (« deep tracker ») à l'état de l'art, en utilisant le jeu de données BFT.
+La chaîne de traitement proposée intègre la compensation du mouvement de la caméra, une détection adaptative basée sur le mouvement, l'affinement des régions et une association de données par filtre de Kalman. Les expériences quantitatives, s'appuyant sur les métriques MOTA, IDF1, IDs, NP et FP, démontrent que cette approche classique obtient des résultats compétitifs dans des scénarios simples (par exemple, le jeu de données Su2001), tandis que les méthodes fondées sur l'apprentissage profond la surpassent systématiquement dans des environnements très dynamiques et encombrés (par exemple, le jeu de données Ci3001).",
       image: "imgs/TrackingBirds.jpg",
       link: "https://github.com/XiLilas/Bird-s-Trace-Tracking"
     },
