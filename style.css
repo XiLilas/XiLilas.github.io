@@ -250,6 +250,7 @@ h1 {
   padding: 20px;
   margin-bottom: 30px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  overflow: hidden;
 }
 
 .project-item img {
@@ -257,6 +258,21 @@ h1 {
   height: auto;
   border-radius: 12px;
   object-fit: cover;
+}
+
+/* 多张图片时 */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.project-gallery .project-image {
+    width: 100%;
+    max-width: none;
+    height: 220px;
+    object-fit: cover;
 }
 
 .project-info {
@@ -339,6 +355,31 @@ nav a:hover {
     color: #3a7bd5;
 }
 
+
+/* ===== Portable ===== */
+@media (max-width: 768px) {
+  .project-item {
+    padding: 20px;
+  }
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .project-gallery .project-image {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+  .project-gallery .project-image {
+    height: auto;
+    max-height: 400px;
+  }
+}
 
 /* ===== 图片放大弹窗 ===== */
 .image-modal {
