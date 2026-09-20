@@ -91,7 +91,7 @@ const projects = {
         "imgs/copieManga2.jpeg"
       ],
       link: ""
-    },
+    }
   ],
 
   "Video Games": [
@@ -135,8 +135,16 @@ listItems.forEach(item => {
     data.forEach(p => {
       const div = document.createElement("div");
       div.className = "project-item";
+
+      let imagesHTML = "";
+      if (Array.isArray(p.image)) {
+        imagesHTML = p.image.map(imgSrc => `<img src="${imgSrc}" alt="${p.title}" class="project-image">`).join("");
+      } else if (p.image) {
+        imagesHTML = `<img src="${p.image}" alt="${p.title}" class="project-image">`;
+      }
+      
       div.innerHTML = `
-        ${p.image ? `<img src="${p.image}" alt="${p.title}" class="project-image">` : ""}
+        ${imagesHTML}
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
         ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
