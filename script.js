@@ -79,7 +79,13 @@ const projects = {
       desc: "Projet JavaFX – UI/UX (2024)",
       image: "imgs/BioFolia.jpg",
       link: "https://github.com/XiLilas/BioFolia"
-    }
+    },
+    {
+      title: "Mes Dessins",
+      desc: "",
+      image: "imgs/素描1.jpg","imgs/素描2.jpg","imgs/素描3.jpg","imgs/copieManga1.jpg","imgs/copieManga2.jpg",
+      link: ""
+    },
   ],
 
   "Video Games": [
