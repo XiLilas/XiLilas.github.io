@@ -83,7 +83,13 @@ const projects = {
     {
       title: "Mes Dessins",
       desc: "",
-      image: "imgs/素描1.jpg","imgs/素描2.jpg","imgs/素描3.jpg","imgs/copieManga1.jpg","imgs/copieManga2.jpg",
+      image: [
+        "imgs/素描1.jpg",
+        "imgs/素描2.jpg",
+        "imgs/素描3.jpg",
+        "imgs/copieManga1.jpg",
+        "imgs/copieManga2.jpg"
+      ],
       link: ""
     },
   ],
