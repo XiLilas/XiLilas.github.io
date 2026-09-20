@@ -138,16 +138,34 @@ listItems.forEach(item => {
 
       let imagesHTML = "";
       if (Array.isArray(p.image)) {
-        imagesHTML = p.image.map(imgSrc => `<img src="${imgSrc}" alt="${p.title}" class="project-image">`).join("");
+        imagesHTML = `
+          <div class="project-gallery">
+            ${p.image.map(imgSrc => `
+              <img 
+                src="${imgSrc}" 
+                alt="${p.title}" 
+                class="project-image"
+              >
+            `).join("")}
+          </div>
+        `;
       } else if (p.image) {
-        imagesHTML = `<img src="${p.image}" alt="${p.title}" class="project-image">`;
+        imagesHTML = `
+          <img 
+            src="${p.image}" 
+            alt="${p.title}" 
+            class="project-image single-image"
+          >
+        `;
       }
       
       div.innerHTML = `
         ${imagesHTML}
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-        ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
+        <div class="project-info">
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          ${p.link ? `<a href="${p.link}" target="_blank">lien</a>` : ""}
+        </div>
       `;
       projectDetail.appendChild(div);
     });
